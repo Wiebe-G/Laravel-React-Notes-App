@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NotesController;
 use App\Http\Controllers\RouteController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
@@ -13,6 +14,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ->name('dashboard');
     Route::get('/notes', [RouteController::class, 'Notes'])
         ->name('notes');
+
+    Route::post('/notes/make', [NotesController::class, 'store'])
+        ->name('notes.store');
+    Route::delete('/notes/delete/{note:id}', [NotesController::class, 'destroy'])
+        ->name('notes.destroy');
 
 });
 
