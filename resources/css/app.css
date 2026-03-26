@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-
 @import 'tw-animate-css';
+@plugin 'daisyui';
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -140,4 +140,9 @@
     body {
         @apply bg-background text-foreground;
     }
+}
+
+.NoteBlockDivClass {
+	@apply relative flex flex-col aspect-video items-center m-2
+	justify-center overflow-hidden rounded-xl border border-sidebar-border/70  dark:border-base-300 break-all
 }
